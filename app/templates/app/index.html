@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Antic'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="{% static "/app/index/styles.css"%}">
   <title>strol.</title>
 </head>
 <body>
   <nav class="navbar sticky-top navbar-expand-xl navbar-dark" style="background-color: #6E2FD9;">
     <a class="navbar-brand" href="#">
-      <img src="./media/logo.png" width="100">
+      <img src="{% static "/app/media/logo.png"%}" width="100">
     </a>
   </nav>
   <div id="home" class="container-fluid d-flex flex-column justify-content-center align-items-center">
