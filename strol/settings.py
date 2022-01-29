@@ -128,4 +128,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ['strol-tyn5m.ondigitalocean.app']
+CSRF_TRUSTED_ORIGINS = ['https://strol-tyn5m.ondigitalocean.app/']
