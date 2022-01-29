@@ -10,3 +10,8 @@ __pycache__
 # Python Byte Code
 *.pyc
 
+#Cache
+cache
+
+graph.png
+.gitignore
