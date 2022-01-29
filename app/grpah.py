@@ -1,4 +1,5 @@
 import osmnx as ox, networkx as nx, geopandas as gpd, numpy as np
+from matplotlib import pyplot as plt
 from shapely.geometry import Point, Polygon
 import random, math
 
@@ -7,7 +8,7 @@ ox.config(log_console=True, use_cache=True)
 point = 44.225575, -76.501424
 
 walkDistance = 2500
-target = walkDistance / 3
+target = walkDistance / 2
 
 G = ox.graph_from_point(point, dist=walkDistance, dist_type='network')
 G = ox.project_graph(G)
@@ -21,84 +22,32 @@ origin_node, routeDistance = ox.distance.nearest_nodes(G, x, y, return_dist=True
 
 route = [origin_node]
 
-# while (routeDistance <= walkDistance / 2):
-#   nextNode = random.choice(list(G.neighbors(origin_node)))
-#   edge_lengths = ox.utils_graph.get_route_edge_attributes(G, route, 'length') 
-#   routeDistance += sum(edge_lengths)
-#   print('nextNode: {}, routeDistance: {}, route: {}').format(nextNode, routeDistance, route)
-#   route.append(nextNode)
-#   origin_node = nextNode
-
-# fig, ax = ox.plot_graph_route(G, route)
-
 Route = []
-
-# def process():
-#   for i in G.nodes:
-#     route = nx.shortest_path(G, origin_node, i, weight='length')
-#     edge_lengths = ox.utils_graph.get_route_edge_attributes(G, route, 'length') 
-#     distance = sum(edge_lengths)
-#     # if math.isclose(distance, target, rel_tol = 100):
-#     #   Route.append(route)
-#     #   for k in G.nodes:
-#     #     route = nx.shortest_path(G, i, k, weight='length')
-#     #     edge_lengths = ox.utils_graph.get_route_edge_attributes(G, route, 'length') 
-#     #     distance = sum(edge_lengths)
-#     #     if math.isclose(distance, target, rel_tol = 100):
-#     #       Route.append(route)
-#     #       return(Route)
+dict = []
 
 
-# process()
+def route():
+  dict = []
+  distance = 0
+  for i in G.nodes:
+    route = nx.shortest_path(G, origin_node, i, weight='length')
+    edge_lengths = ox.utils_graph.get_route_edge_attributes(G, route, 'length') 
+    distance = sum(edge_lengths)
+    if math.isclose(distance, target, abs_tol = 250):
+      dict.append([i, sum(edge_lengths)])
 
-# Route.append(nx.shortest_path(G, Route[-1][-1] , origin_node, weight='length'))
+  anchorNode = random.choice(dict)
+  Route.append(nx.shortest_path(G, origin_node, anchorNode[0], weight='length'))
+  Route.append(nx.shortest_path(G, Route[0][-1], random.choice(list(nx.descendants_at_distance(G, Route[0][-1], 3))), weight='length'))
+  Route.append(nx.shortest_path(G, Route[1][-1], origin_node, weight='length'))
 
-# ox.plot.plot_graph_routes(G, Route, route_colors='r', route_linewidths=4)
+  distance = sum(ox.utils_graph.get_route_edge_attributes(G, Route[0], 'length'))
+  distance += sum(ox.utils_graph.get_route_edge_attributes(G, Route[1], 'length'))
+  distance += sum(ox.utils_graph.get_route_edge_attributes(G, Route[2], 'length'))
 
+  print('Distance is {} m.'.format(distance))
+  fig, ax = ox.plot.plot_graph_routes(G, Route, route_colors='r', route_linewidths=4,show=True)
+  plt.clf()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# dict.sort(key=lambda x:x[1])
-
-
-# absArray = np.abs(dict - target)
-# nodeAnchor = dict[absArray.argmin()]
-
-# for i in G.nodes:
-#   route = nx.shortest_path(G, nodeAnchor, i, weight='length')
-#   edge_lengths = ox.utils_graph.get_route_edge_attributes(G, route, 'length') 
-#   dict.append([i, sum(edge_lengths)])
-
-# for i in G.nodes:
-#   route = nx.shortest_path(G, origin_node, i, weight='length')
-#   edge_lengths = ox.utils_graph.get_route_edge_attributes(G, route, 'length') 
-#   dict2.append([i, sum(edge_lengths)])
-
-#   # if sum(edge_lengths) <= ((walkDistance / 2) * 1.10) or sum(edge_lengths) >= ((walkDistance / 2) * 0.90):
-#   #   dict.append([i, sum(edge_lengths)])
-
-
-
-
-
-for i in G.nodes:
-  route = nx.shortest_path(G, origin_node, i, weight='length')
-  edge_lengths = ox.utils_graph.get_route_edge_attributes(G, route, 'length') 
-  distance = sum(edge_lengths)
-
-
-
-
+for x in range(20):
+  route()
