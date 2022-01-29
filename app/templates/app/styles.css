@@ -1,12 +1,25 @@
 body{
   overflow-y:hidden;
+  overflow-x: hidden;
   background-image:url("./media/bg.jpg");
   background-size: cover;
 }
 
+#second{
+  background-color: white !important;
+}
+
+
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
   background-color: #6E2FD9 !important;
   border: 0px;
+}
+.btn-primary:hover{
+  text-decoration: none !important;
+}
+
+.form-range{
+  width:100%;
 }
 
 h1{
@@ -28,9 +41,8 @@ h2{
 
 
 
-
-.display-4, .display-6{
-  max-width: 80%;
+.x{
+  max-width: 100%;
   animation: fadeIn 5s linear;
 }
 
@@ -57,11 +69,20 @@ h2{
   }
 }
 
-.container-fluid{
+#home{
   animation: fadeIn 3s ease;
   -webkit-animation: fadeIn 3s ease;
-  border: 1px solid black;
   height: -o-calc(100vh - 54px); /* opera */
   height: -webkit-calc(100vh - 54px); /* google, safari */
   height: -moz-calc(100vh - 54px); /* firefox */
+}
+
+
+#inp{
+    width: 80%;
+    animation: fadeIn 3s ease;
+    -webkit-animation: fadeIn 3s ease;
+    height: -o-calc(100vh - 54px); /* opera */
+    height: -webkit-calc(100vh - 54px); /* google, safari */
+    height: -moz-calc(100vh - 54px); /* firefox */
 }
