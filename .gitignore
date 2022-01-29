@@ -1,0 +1,12 @@
+# Secrets File
+.env
+
+# Database
+db.sqlite3
+
+# Cache Dir
+__pycache__
+
+# Python Byte Code
+*.pyc
+
