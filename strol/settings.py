@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','192.168.10.101','strol-tyn5m.ondigitalocean.app']
+ALLOWED_HOSTS = ['127.0.0.1','192.168.10.101','strol-tyn5m.ondigitalocean.app',]
 
 
 # Application definition
@@ -128,4 +128,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ['strol-tyn5m.ondigitalocean.app/']
+CSRF_TRUSTED_ORIGINS = ['strol-tyn5m.ondigitalocean.app']
