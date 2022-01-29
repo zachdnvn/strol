@@ -1,0 +1,40 @@
+body{
+  overflow-y:hidden;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #6E2FD9 !important;
+  border: 0px;
+}
+
+h1{
+  font-size:4rem !important;
+}
+
+h2{
+  font-size:2rem !important;
+}
+
+@media (min-width:576px) {
+  h1{
+    font-size: 6rem !important;
+  }
+  h2{
+    font-size: 3.5rem !important;
+  }
+}
+
+
+
+.display-4, .display-6{
+  max-width: 80%;
+}
+
+.container-fluid{
+  background-image:url("./bg.jpg");
+  background-size: cover;
+  border: 1px solid black;
+  height: -o-calc(100vh - 54px); /* opera */
+  height: -webkit-calc(100vh - 54px); /* google, safari */
+  height: -moz-calc(100vh - 54px); /* firefox */
+}
