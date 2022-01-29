@@ -17,6 +17,8 @@ userParam = {
 def index(request):
   return render(request, 'index.html')
 
+def app(request):
+  return render(request, 'app.html')
 
 
 def mapper(request, userParam):
