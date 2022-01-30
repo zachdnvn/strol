@@ -4,4 +4,4 @@ networkx
 osmnx
 googlemaps
 scikit-learn
-osmapi
+plotly.express
