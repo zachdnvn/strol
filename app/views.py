@@ -41,7 +41,7 @@ def mapper(request, info):
 
   # x, y = point_proj.x, point_proj.y
 
-  target = walkDistance / 2
+  target = info['distance'] / 2
 
   origin_node, routeDistance = ox.distance.nearest_nodes(G, point[0], point[1], return_dist=True)
 
