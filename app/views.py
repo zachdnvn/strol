@@ -14,9 +14,6 @@ px.set_mapbox_access_token('{}'.format(os.getenv('MB_KEY')))
 
 ox.config(log_console=True, use_cache=True)
 
-walkDistance = 2500
-target = walkDistance / 2
-
 # Hardcoded values for testing
 points = (44.2269, -76.5001)
 def index(request):
@@ -36,14 +33,15 @@ def mapper(request, info):
   geocode_result = gmaps.geocode(info['Location'])
   point = (geocode_result[0]['geometry']['location']['lat'], geocode_result[0]['geometry']['location']['lng'])
 
-
-  G = ox.graph_from_point(point, dist=walkDistance, dist_type='network')
+  G = ox.graph_from_point(point, dist=info['distance'], dist_type='network')
   # G = ox.project_graph(G)
   # G = ox.simplification.consolidate_intersections(G, tolerance=10, dead_ends=False)
 
   # point_proj, crs = ox.projection.project_geometry(Point(reversed(point)), to_crs=G.graph['crs'])
 
   # x, y = point_proj.x, point_proj.y
+
+  target = walkDistance / 2
 
   origin_node, routeDistance = ox.distance.nearest_nodes(G, point[0], point[1], return_dist=True)
 
