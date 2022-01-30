@@ -131,7 +131,7 @@ def mapper(request, info):
   filepath = "app/templates/app/route.html"
   # m31.save('m31.html')
   # m32.save('m32.html')
-  m3.save('m3.html')
+  m3.save(filepath)
   # # IFrame(filepath, width=600, height=500)
 
   # # route_map = ox.plot_route_folium(G, Route[0], route_color='#ff0000', opacity=0.5)
