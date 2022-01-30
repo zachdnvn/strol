@@ -33,7 +33,7 @@ def mapper(request, info):
   geocode_result = gmaps.geocode(info['Location'])
   point = (geocode_result[0]['geometry']['location']['lat'], geocode_result[0]['geometry']['location']['lng'])
 
-  G = ox.graph_from_point(point, dist=info['distance'], dist_type='network')
+  G = ox.graph_from_point(point, dist=(info['distance']/2), dist_type='network')
   # G = ox.project_graph(G)
   # G = ox.simplification.consolidate_intersections(G, tolerance=10, dead_ends=False)
 
