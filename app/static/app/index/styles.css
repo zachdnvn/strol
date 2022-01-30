@@ -1,7 +1,7 @@
 body{
   overflow-y:hidden;
   overflow-x: hidden;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: system-ui;
   background-image:url("../media/bg.jpg");
   background-size: cover;
 }
@@ -12,7 +12,7 @@ body{
 
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-  background-color: #6E2FD9 !important;
+  background-color: #9523ff !important;
   border: 0px;
 }
 .btn-primary:hover{
