@@ -1,6 +1,7 @@
 import osmnx as ox, networkx as nx, geopandas as gpd, numpy as np
 from matplotlib import pyplot as plt
 from shapely.geometry import Point, Polygon
+from django.http import FileResponse
 import random, math
 
 ox.config(log_console=True, use_cache=True)
@@ -46,8 +47,6 @@ def route():
   distance += sum(ox.utils_graph.get_route_edge_attributes(G, Route[2], 'length'))
 
   print('Distance is {} m.'.format(distance))
-  fig, ax = ox.plot.plot_graph_routes(G, Route, route_colors='r', route_linewidths=4,show=True)
-  plt.clf()
+  fig, ax = ox.plot.plot_graph_routes(G, Route, route_colors='r', route_linewidths=4,show=False)
+  
 
-for x in range(20):
-  route()
