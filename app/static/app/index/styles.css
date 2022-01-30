@@ -1,21 +1,18 @@
 body{
   overflow-y:hidden;
   overflow-x: hidden;
-  font-family: system-ui;
+  font-family: 'PT Sans', sans-serif !important;
   background-image:url("../media/bg.jpg");
   background-size: cover;
 }
 
-#second{
-  background-color: white !important;
-}
 
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
   background-color: #9523ff !important;
   border: 0px;
 }
-.btn-primary:hover{
+.btn:hover{
   text-decoration: none !important;
 }
 
@@ -43,8 +40,16 @@ h2{
 
 
 .x{
-  max-width: 100%;
-  animation: fadeIn 5s linear;
+  font-weight: 700 !important;
+  max-width: 80%;
+  animation: fadeIn 3s linear;
+}
+
+.y{
+  font-weight: 100 !important;
+  font-style: italic;
+  max-width: 70%;
+  animation: fadeIn 3s linear;
 }
 
 
