@@ -8,6 +8,7 @@ import random, math
 from django.shortcuts import render
 from .forms import locForm
 from IPython.display import IFrame
+from django.shortcuts import redirect
 
 gmaps = googlemaps.Client(key='{}'.format(os.getenv('GAPI_KEY')))
 px.set_mapbox_access_token('{}'.format(os.getenv('MB_KEY')))
@@ -16,6 +17,7 @@ ox.config(log_console=True, use_cache=True)
 
 walkDistance = 2500
 target = walkDistance / 2
+genMap = 1
 
 # Hardcoded values for testing
 points = (44.2269, -76.5001)
@@ -131,8 +133,10 @@ def mapper(request, info):
   filepath = "app/templates/app/route.html"
   # m31.save('m31.html')
   # m32.save('m32.html')
-  m3.save('m3.html')
+  m3.save(filepath)
   # # IFrame(filepath, width=600, height=500)
 
   # # route_map = ox.plot_route_folium(G, Route[0], route_color='#ff0000', opacity=0.5)
   # # route_map.save('route.html')
+
+  return redirect('route.html')
