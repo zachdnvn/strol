@@ -2,10 +2,8 @@
 <p align="center">strol. is an online web tool that generates 'strols' - cyclic paths that are of a desired length. The tool's main purpose is to incentivize going outside by diversifying the path that you would take on a frequent walk which in turn makes every journey unique.</p>
 
 # Preview
-<p align="center"><img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/812/212/datas/original.jpg"></p>
-<p align="center"><img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/812/513/datas/gallery.jpg">
-<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/812/514/datas/gallery.jpg">
-<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/815/859/datas/gallery.jpg"></p>
+<p align="center"><img src="https://github.com/zachdnvn/strol/assets/67702022/92a863f4-d593-41d9-85e2-34cdc33e544c"></p>
+<p align="center"><img src="https://github.com/zachdnvn/strol/assets/67702022/c974ca1f-7b42-480f-af5b-e2ced1eb23ec"></p>
 
 
 
